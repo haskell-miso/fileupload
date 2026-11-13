@@ -15,7 +15,7 @@ build:
 	cp -v $(my_wasm) public/
 
 optim:
-	wasm-opt -all -O2 public/client.wasm -o public/client.wasm
+	wasm-opt -all --disable-compact-imports -O2 public/client.wasm -o public/client.wasm
 	wasm-tools strip -o public/client.wasm public/client.wasm
 
 serve:
